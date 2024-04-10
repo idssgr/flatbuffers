@@ -17,19 +17,14 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>flatbuffers.snk</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(UNSAFE_BYTEBUFFER)' == 'true'">
     <DefineConstants>$(DefineConstants);UNSAFE_BYTEBUFFER</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(BYTEBUFFER_NO_BOUNDS_CHECK)' == 'true'">
-    <DefineConstants>$(DefineConstants);BYTEBUFFER_NO_BOUNDS_CHECK</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(ENABLE_SPAN_T)' == 'true'">
     <DefineConstants>$(DefineConstants);ENABLE_SPAN_T</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(BYTEBUFFER_NO_BOUNDS_CHECK)' == 'true'">
+    <DefineConstants>$(DefineConstants);BYTEBUFFER_NO_BOUNDS_CHECK</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
   </ItemGroup>
